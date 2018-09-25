@@ -53,7 +53,8 @@
 #include <linux/oom.h>
 #include <linux/writeback.h>
 #include <linux/shm.h>
-#include <linux/kcov.h>
+
+#include "sched/tune.h"
 
 #include <asm/uaccess.h>
 #include <asm/unistd.h>
@@ -690,7 +691,6 @@ void do_exit(long code)
 #endif
 
 	profile_task_exit(tsk);
-	kcov_task_exit(tsk);
 
 	WARN_ON(blk_needs_flush_plug(tsk));
 
