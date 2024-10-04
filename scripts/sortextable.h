@@ -12,6 +12,8 @@
  * Licensed under the GNU General Public License, version 2 (GPLv2).
  */
 
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+
 #undef extable_ent_size
 #undef compare_extable
 #undef do_func
