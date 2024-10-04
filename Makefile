@@ -663,15 +663,6 @@ ifeq ($(shell $(CONFIG_SHELL) $(srctree)/scripts/gcc-goto.sh $(CC) $(KBUILD_CFLA
         KBUILD_AFLAGS += -DCC_HAVE_ASM_GOTO
 endif
 
-ifdef CONFIG_RKP_CFP_JOPP
-REAL_CC		= $(srctree)/../prebuilts/gcc-cfp-jopp-only/aarch64-linux-android-4.9/bin/aarch64-linux-android-gcc
-CC		= $(srctree)/scripts/gcc-wrapper.py $(REAL_CC)
-endif
-ifdef CONFIG_RKP_CFP_ROPP
-REAL_CC		= $(srctree)/../prebuilts/gcc-cfp/aarch64-linux-android-4.9/bin/aarch64-linux-android-gcc
-CC		= $(srctree)/scripts/gcc-wrapper.py $(REAL_CC)
-endif
-
 ifdef CONFIG_READABLE_ASM
 # Disable optimizations that make assembler listings hard to read.
 # reorder blocks reorders the control in the function
