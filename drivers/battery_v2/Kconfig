@@ -618,7 +618,7 @@ config SAMSUNG_LPM_MODE
 	  implemet power off charging in the bootloader.
 
 config SAMSUNG_BATTERY_ENG_TEST
-	bool "enable ENG mode for battery test"
+	tristate "enable ENG mode for battery test"
 	default n
 	help
 	  Say Y to include support for battery test
