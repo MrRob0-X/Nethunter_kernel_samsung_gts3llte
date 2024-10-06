@@ -454,12 +454,12 @@ CFQ_CFQQ_FNS(deep);
 CFQ_CFQQ_FNS(wait_busy);
 #undef CFQ_CFQQ_FNS
 
-static inline struct cfq_group *pd_to_cfqg(struct blkg_policy_data *pd)
+static inline __maybe_unused struct cfq_group *pd_to_cfqg(struct blkg_policy_data *pd)
 {
 	return pd ? container_of(pd, struct cfq_group, pd) : NULL;
 }
 
-static inline struct blkcg_gq *cfqg_to_blkg(struct cfq_group *cfqg)
+static inline __maybe_unused struct blkcg_gq *cfqg_to_blkg(struct cfq_group *cfqg)
 {
 	return pd_to_blkg(&cfqg->pd);
 }
