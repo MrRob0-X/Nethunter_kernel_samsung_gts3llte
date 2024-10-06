@@ -596,8 +596,8 @@ static void cfqg_stats_update_avg_queue_size(struct cfq_group *cfqg)
 
 #else	/* CONFIG_CFQ_GROUP_IOSCHED && CONFIG_DEBUG_BLK_CGROUP */
 
-static inline void cfqg_stats_set_start_group_wait_time(struct cfq_group *cfqg, struct cfq_group *curr_cfqg) { }
-static inline void cfqg_stats_end_empty_time(struct cfqg_stats *stats) { }
+static inline __maybe_unused void cfqg_stats_set_start_group_wait_time(struct cfq_group *cfqg, struct cfq_group *curr_cfqg) { }
+static inline __maybe_unused void cfqg_stats_end_empty_time(struct cfqg_stats *stats) { }
 static inline void cfqg_stats_update_dequeue(struct cfq_group *cfqg) { }
 static inline void cfqg_stats_set_start_empty_time(struct cfq_group *cfqg) { }
 static inline void cfqg_stats_update_idle_time(struct cfq_group *cfqg) { }
