@@ -63,7 +63,7 @@ static void desc_smp_init(struct irq_desc *desc, int node)
 #endif
 }
 
-static inline int desc_node(struct irq_desc *desc)
+static inline __maybe_unused int desc_node(struct irq_desc *desc)
 {
 	return desc->irq_data.node;
 }
