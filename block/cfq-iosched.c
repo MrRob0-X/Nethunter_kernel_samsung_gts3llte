@@ -430,7 +430,7 @@ static inline void cfq_mark_cfqq_##name(struct cfq_queue *cfqq)		\
 {									\
 	(cfqq)->flags |= (1 << CFQ_CFQQ_FLAG_##name);			\
 }									\
-static inline void cfq_clear_cfqq_##name(struct cfq_queue *cfqq)	\
+static inline __maybe_unused void cfq_clear_cfqq_##name(struct cfq_queue *cfqq)	\
 {									\
 	(cfqq)->flags &= ~(1 << CFQ_CFQQ_FLAG_##name);			\
 }									\
