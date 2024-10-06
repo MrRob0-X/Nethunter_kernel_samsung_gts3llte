@@ -3860,7 +3860,7 @@ static void transfer_busy_time(struct rq *rq, struct related_thread_group *grp,
 	BUG_ON((s64)*src_prev_runnable_sum < 0);
 }
 
-static inline struct group_cpu_time *
+static inline __maybe_unused struct group_cpu_time *
 task_group_cpu_time(struct task_struct *p, int cpu)
 {
 	return _group_cpu_time(rcu_dereference(p->grp), cpu);
