@@ -1365,7 +1365,7 @@ static inline void dec_slabs_node(struct kmem_cache *s, int node,
  * Hooks for other subsystems that check memory allocations. In a typical
  * production configuration these hooks all should produce no code at all.
  */
-static inline void kmalloc_large_node_hook(void *ptr, size_t size, gfp_t flags)
+static inline __maybe_unused void kmalloc_large_node_hook(void *ptr, size_t size, gfp_t flags)
 {
 	kmemleak_alloc(ptr, size, 1, flags);
 	kasan_kmalloc_large(ptr, size);
@@ -1992,12 +1992,12 @@ static inline unsigned long next_tid(unsigned long tid)
 	return tid + TID_STEP;
 }
 
-static inline unsigned int tid_to_cpu(unsigned long tid)
+static inline __maybe_unused unsigned int tid_to_cpu(unsigned long tid)
 {
 	return tid % TID_STEP;
 }
 
-static inline unsigned long tid_to_event(unsigned long tid)
+static inline __maybe_unused unsigned long tid_to_event(unsigned long tid)
 {
 	return tid / TID_STEP;
 }
