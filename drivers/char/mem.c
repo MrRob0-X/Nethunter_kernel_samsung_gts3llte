@@ -44,7 +44,7 @@
 
 #define DEVPORT_MINOR	4
 
-static inline unsigned long size_inside_page(unsigned long start,
+static inline __maybe_unused unsigned long size_inside_page(unsigned long start,
 					     unsigned long size)
 {
 	unsigned long sz;
