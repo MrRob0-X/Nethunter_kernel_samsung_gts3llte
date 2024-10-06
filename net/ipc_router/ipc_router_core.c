@@ -4419,7 +4419,7 @@ static int ipc_router_core_init(void)
 }
 
 #ifdef IPC_ROUTER_WS_DEBUG
-static inline void msm_ipc_router_port_pkt_debug(struct msm_ipc_port *port_ptr)
+static inline __maybe_unused void msm_ipc_router_port_pkt_debug(struct msm_ipc_port *port_ptr)
 {
 	struct rr_packet *pkt;
 	struct sk_buff_head *skb_head;
