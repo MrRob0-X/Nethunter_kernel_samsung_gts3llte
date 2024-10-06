@@ -81,7 +81,7 @@ static inline uint64_t buf_page_start(uint64_t buf)
 	return start;
 }
 
-static inline uint64_t buf_page_offset(uint64_t buf)
+static inline __maybe_unused uint64_t buf_page_offset(uint64_t buf)
 {
 	uint64_t offset = (uint64_t) buf & (PAGE_SIZE - 1);
 	return offset;
