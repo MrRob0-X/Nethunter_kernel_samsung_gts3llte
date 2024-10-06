@@ -576,7 +576,7 @@ static int ecryptfs_lookup_interpose(struct dentry *dentry,
 }
 
 #ifdef CONFIG_SDP
-static inline int isdigit(int ch)
+static inline __maybe_unused int isdigit(int ch)
 {
 	return (ch >= '0') && (ch <= '9');
 }
