@@ -453,10 +453,10 @@ static int force_error(const char *val, struct kernel_param *kp)
 		simulate_apps_wdog_bite();
 	} else if (!strncmp(val, "dabort", 6)) {
 		pr_emerg("Generating a data abort exception!\n");
-		*(unsigned int *)0x0 = 0x0;
+		__builtin_trap();
 	} else if (!strncmp(val, "pabort", 6)) {
 		pr_emerg("Generating a prefetch abort exception!\n");
-		((void (*)(void))0x0)();
+		__builtin_trap();
 	} else if (!strncmp(val, "undef", 5)) {
 		pr_emerg("Generating a undefined instruction exception!\n");
 		BUG();
