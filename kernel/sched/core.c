@@ -9010,7 +9010,7 @@ static int __init sched_debug_setup(char *str)
 }
 early_param("sched_debug", sched_debug_setup);
 
-static inline bool sched_debug(void)
+static inline __maybe_unused bool sched_debug(void)
 {
 	return sched_debug_enabled;
 }
