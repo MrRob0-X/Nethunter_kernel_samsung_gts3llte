@@ -13,7 +13,7 @@
 #include <string.h>
 #include "include/defex_rules.h"
 
-#define SAFE_STRCOPY(dst, src) do { strncpy(dst, src, sizeof(dst)); dst[sizeof(dst) - 1] = 0; } while(0)
+#define SAFE_STRCOPY(dst, src) do { strncpy(dst, src, sizeof(dst) - 1); dst[sizeof(dst) - 1] = 0; } while(0)
 
 struct file_list_item {
 	char file_name[PATH_MAX];
