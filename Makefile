@@ -644,6 +644,7 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning, address-of-packed-member)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, attribute-alias)
 KBUILD_CFLAGS   += $(call cc-option, -Wno-asm-operand-widths)
 KBUILD_CFLAGS   += $(call cc-option, -Wno-unused-function)
+KBUILD_CFLAGS   += $(call cc-option, -Wno-expansion-to-defined)
 KBUILD_CFLAGS	+= $(call cc-option,-fno-PIE)
 KBUILD_AFLAGS	+= $(call cc-option,-fno-PIE)
 
