@@ -135,13 +135,13 @@ static int apq_snd_enable_codec_ext_clk(struct snd_soc_codec *codec,
 
 
 
-static inline int param_is_mask(int p)
+static inline __maybe_unused int param_is_mask(int p)
 {
 	return (p >= SNDRV_PCM_HW_PARAM_FIRST_MASK) &&
 			(p <= SNDRV_PCM_HW_PARAM_LAST_MASK);
 }
 
-static inline struct snd_mask *param_to_mask(struct snd_pcm_hw_params *p,
+static inline __maybe_unused struct snd_mask *param_to_mask(struct snd_pcm_hw_params *p,
 					     int n)
 {
 	return &(p->masks[n - SNDRV_PCM_HW_PARAM_FIRST_MASK]);
