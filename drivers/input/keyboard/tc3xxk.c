@@ -1100,7 +1100,7 @@ static inline int getsda(struct tc3xxk_data *data)
 	return gpio_get_value(data->dtdata->sda_gpio);
 }
 
-static inline int getscl(struct tc3xxk_data *data)
+static inline __maybe_unused int getscl(struct tc3xxk_data *data)
 {
 	return gpio_get_value(data->dtdata->scl_gpio);
 }
