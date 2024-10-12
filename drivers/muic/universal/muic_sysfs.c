@@ -658,7 +658,7 @@ static ssize_t muic_set_afc_disable(struct device *dev,
 
 	psy_val.intval = param_val;
 	psy_do_property("battery", set,
-		POWER_SUPPLY_EXT_PROP_HV_DISABLE, psy_val);
+		(enum power_supply_property)POWER_SUPPLY_EXT_PROP_HV_DISABLE, psy_val);
 
 	/* for factory self charging test (AFC-> NORMAL TA) */
 	if (pmuic->is_factory_start) {
