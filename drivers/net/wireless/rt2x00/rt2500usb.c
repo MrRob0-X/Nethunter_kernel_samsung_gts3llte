@@ -77,7 +77,7 @@ static inline void rt2500usb_register_read_lock(struct rt2x00_dev *rt2x00dev,
 	*value = le16_to_cpu(reg);
 }
 
-static inline void rt2500usb_register_multiread(struct rt2x00_dev *rt2x00dev,
+static inline __maybe_unused void rt2500usb_register_multiread(struct rt2x00_dev *rt2x00dev,
 						const unsigned int offset,
 						void *value, const u16 length)
 {
