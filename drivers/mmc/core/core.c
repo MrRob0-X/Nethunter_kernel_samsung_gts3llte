@@ -3409,7 +3409,7 @@ static int mmc_do_erase(struct mmc_card *card, unsigned int from,
 			goto out;
 		}
 
-		if (cmd.resp[0] & (R1_WP_ERASE_SKIP || R1_WP_VIOLATION)) {
+		if (cmd.resp[0] & (R1_WP_ERASE_SKIP | R1_WP_VIOLATION)) {
 			printk(KERN_ERR "error %d requesting status %#x.\n",
 					err, cmd.resp[0]);
 			err = -EIO;
