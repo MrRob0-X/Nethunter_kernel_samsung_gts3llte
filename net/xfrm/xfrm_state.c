@@ -368,7 +368,7 @@ static void xfrm_state_gc_task(struct work_struct *work)
 		xfrm_state_gc_destroy(x);
 }
 
-static inline unsigned long make_jiffies(long secs)
+static inline __maybe_unused unsigned long make_jiffies(long secs)
 {
 	if (secs >= (MAX_SCHEDULE_TIMEOUT-1)/HZ)
 		return MAX_SCHEDULE_TIMEOUT-1;
