@@ -14624,7 +14624,7 @@ void cnss_read_roam_cable(void)
 	char *filepath       = SEC_ANTCABLE_FILEPATH;
 	int wifi_cable1 = 0;
 	int wifi_cable2 = 0;
-	char antbuffer[2]   = {0};
+	char antbuffer[4]   = {0};
 	mm_segment_t oldfs   = {0};
 	int ret = 0;
 	
